@@ -1,0 +1,11 @@
+The outcomes of this personal project are:
+
+1. An expolatory data analysis of the training data to find any interesting insights and provide descriptive visualizations. Resources for that are: https://www.datacamp.com/courses/exploratory-data-analysis-in-python and https://www.datacamp.com/courses/introduction-to-matplotlib additionally this https://www.datacamp.com/courses/data-visualization-with-seaborn. Time allotted 1 week.
+
+2. Building initial models+ feature engineering. This will be an iterative process from building a baseline regression model to creating new features to finalising with the best possible model measured using the competition chosen metric (RMSLE). Resources for that are: https://www.udemy.com/course/feature-selection-for-machine-learning and https://www.udemy.com/course/feature-engineering-for-machine-learning and https://www.kaggle.com/learn/feature-engineering and https://www.datacamp.com/courses/feature-engineering-for-machine-learning-in-python
+
+3. Test best model using test data and submit to Kaggle
+
+4. Creating clean production-ready code for the model. There are so many possibilities here, but I am interested in learning how to use sklearn.pipeline and have code developed using the PyCharm IDE. Resources for this are: https://www.kaggle.com/baghern/a-deep-dive-into-sklearn-pipelines and https://www.datacamp.com/courses/software-engineering-for-data-scientists-in-python 
+
+5. Deploy the model. I am not sure how, but probably using AWS SageMaker. Resources for that are https://github.com/udacity/sagemaker-deployment 
