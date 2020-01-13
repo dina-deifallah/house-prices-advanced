@@ -1,0 +1,96 @@
+Interesting data columns for feature engineering
+
+1.MSSubClass may need grouping into a smaller number of categories (convert to categorical)
+
+2.LotFrontage: has missing values that need to be imputed
+
+3.Alley: NA should be replaced by a string that says 'None' because it means there is no alley access
+
+4.Neighborhood: might need grouping
+
+5.OverallQual: scale should be categorical
+
+6.OverallCond: scale should be categorical
+
+7.YearBuilt: should be categorical. Might need grouping according to range.
+
+8.YearRemodAdd: can be used to create another feature column Remod, which should be 1/0 binary according to the rule YearBuilt==YearRemodAdd then 0 else 1
+
+9.Exterior1st: might need grouping
+
+10.Exterior2nd: might need grouping
+
+Note: both 9 and 10 can be merged together? 
+
+11.MasVnrType: has a few NA that need imputing
+
+12.MasVnrArea: has a few NA that need imputing. What is the area for None ? 0?
+
+13.BsmtQual: NA should be replaced with None. Is there a string 'NA' or a np.null ?
+
+14.BsmtCond: same as 13
+
+15.BsmtExposure: same as 13
+
+16.BsmtFinType1: same as 13
+
+17.BsmtFinSF1: should have 0 corresponding to NA in 16
+
+18.BsmtFinType2: could be used with 16 to create another feature, binary 0/1, BsmtMult, which indicates if there are multiple finished spaces in the basement (1) or not (0)
+
+19.BsmtFinSF2: same as 17
+
+20.BsmtFullBath: should be categorical ? Might need grouping ?
+
+21.BsmtHalfBath: same as 20
+
+22.FullBath: same as 20. 
+
+23.HalfBath: same as 20
+
+24.Bedroom: same as 20
+
+25.Kitchen: same as 20
+
+26.TotRmsAbvGrd: same as 20
+
+27.Fireplaces: same as 20
+
+28.FireplaceQu: check that NA corresponds to 0 in 27. Replace NA by 'None'
+
+29.GarageType: NA to 'None'
+
+30.GarageYrBlt: convert too categorical. Possibly needs grouping. Replace NA with 'None'
+
+31.GarageFinish: same as 29
+
+32.GarageCars: check that 0 corresponds to NA in 29, 30, 31
+
+33.GarageArea: same as 32
+
+34.GarageQual: same as 29
+
+35.GarageCond: same as 29
+
+36.PoolQC: same as 29
+
+37.PoolArea: check that 0 corresponds to NA in 36
+
+38.Fence: same as 29. Mostly NA so may be convert to binary 1/0
+
+39.MiscFeature: same as 38
+
+40.MiscVal: will be mostly 0, should correspond to NA in 39
+
+41.MoSold: should be categorical.
+
+42.YrSold: should be categorical? Probably needs grouping
+
+43.SaleType: might need grouping
+
+44.SaleCondition: same as 43
+
+
+
+
+
