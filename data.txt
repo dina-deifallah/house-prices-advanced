@@ -2,9 +2,9 @@ Interesting data columns for feature engineering
 
 1.MSSubClass may need grouping into a smaller number of categories (convert to categorical)
 
-2.LotFrontage: has missing values that need to be imputed
+2.LotFrontage: has missing values that need to be imputed --done
 
-3.Alley: NA should be replaced by a string that says 'None' because it means there is no alley access
+3.Alley: NA should be replaced by a string that says 'None' because it means there is no alley access --done
 
 4.Neighborhood: might need grouping
 
