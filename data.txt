@@ -91,6 +91,42 @@ Note: both 9 and 10 can be merged together?
 44.SaleCondition: same as 43
 
 
+**Feature Engineering ideas**
+*encoding categorical variables*
+1. K is better than K-1 binary hot one encoding for the tree based algorithms
+2. Split before encoding into train and test to avoid overfitting!
+3. Use Feature Engine library, really easy to use to create feature transformers fitted on train set. It also works when there are labels only present in the train set but not the test set. What about labels only in test set? What does it mean to "ignore" them? Can pipelines from scikit learn behave the same? Ignore them means sets all binary variables corresponding to the train set labels to zero. In that sense, K encoding is more clear than k-1 encoding
+4. One step that might improve encoding of cat vars with high cardinality is to hot one code only the top labels. This will handle the "new/unseen" variables in test set. Very easy using feature engine
+5. Integer encoding is very simple, can be used without expanding the feature space, especially for quick baseline model building. It can actually work well enough for tree based algorithms. Can't handle new unseen labels! Is not suitable for linear models!
+6. Another way to encode the categorical variables is to use frequency encoding. This approach works well with tree algorithms, but not suitable for linear algorithms. Also, it does not automatically handle new labels in the test set.
+7.Ordered Ordinal Encoding: this approach is suitable for both linear and tree methods. Does not expand the feature space. The issue with it is that it might lead to overfitting and it is tricky to implement with CV currently.
+8.Mean encoding replaces each label in a cat var by the mean of the target variable.It has the same advantages and disadvantages as the ordered ordinal encoding.
+9.Only for Binary classification --> there is probability ratio encoder
+10. Weight of Evidence encoding: also used for binary classification. Primarily used for logistic regression.
+11.Rare label encoding/grouping --> can elegantly handle the situation of having high cardinality cat vars and the possibility of brand new labels in test set. Would be interesting to see with and without.
+12. Binary encoding and feature hashing
+
+*Variable Transformation*
+The main idea is to apply a function on a numerical variable that has a skewed transformation to convert it to an almost normal distribution
+1.we have log10, reciprocal, square root, power transformations and box-cox and yeoJohnson transformation
+2. With the exception of YeoJohnson and BoxCox, which have a hyper parameter lambda, we can do the transformations before splitting the data into train and test sets.
+3. YeoJohnson can be used for all values of x, which is especially useful for variables that have a zero peak. Can we also replace zero with 1 in our house dataset? Or any small positive number ?
+
+
+
+*Variable Binning*
+1. Equal width binning--> max-min/interval_width
+
+*Engineering Date and Time variables*
+1.For my house prices data set, we can create a new variable that is the difference between the house remodelling year and purchase year.
+2.Date variables should not be used as categorical variables when building a machine learning model. Not only because they have a multitude of categories, but also because when we actually use the model to score a new observation, this observation will most likely be in the future, an therefore its date label, might be different from the ones contained in the training set and therefore the ones used to train the machine learning algorithm. Therefore a year part for example will be an int numerical variable. This can be binned or left as is.
+
+*Feature Scaling*
+1. Tree based models for both classification and regression are robust to features magnitude and do not require feature scaling.
+
+
+*Assembling the Pipeline*
+1. 
 
 
 
